@@ -37,7 +37,7 @@ namespace api.Controllers
                   
                 }
 
-                var path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, @"api\PnP.PowerShell\1.10.0\PnP.PowerShell.psd1");
+                var path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, @"PnP.PowerShell\1.10.0\PnP.PowerShell.psd1");
                 powerShell.Commands.Clear();
                 var psCommand1 = powerShell.AddCommand("Import-Module");
                 psCommand1.AddParameter("Name", path);
