@@ -1,1 +1,4 @@
 ﻿/.vs/api/
+/api/obj
+/api/bin
+/.idea
