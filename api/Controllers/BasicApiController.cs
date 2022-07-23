@@ -1,59 +1,97 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Management.Automation;
+using System.Security;
 
 namespace api.Controllers
 {
     [ApiController]
-    [Route("basicApi")]
-    public class BasicApiController : ControllerBase
+    [Route("runps")]
+    public class RunPsController : ControllerBase
     {
-        [HttpGet("TrueString", Name = "TrueString")]
-        public String TrueString()
+        [HttpPost("execut", Name = "TrueString")]
+        public ActionResult Execute(AzureFunctionJobMessage message)
         {
-            return bool.TrueString;
+            var username = this.HttpContext.Request.Headers["username"];
+            var password = this.HttpContext.Request.Headers["password"];
+            RunPnpPowershell(username, password, message).GetAwaiter().GetResult();
+            return this.Ok();
         }
 
-        [HttpGet("FalseString", Name = "FalseString")]
-        public String FalseString()
+
+        async static Task RunPnpPowershell(String userName, String password, AzureFunctionJobMessage message)
         {
-            return bool.FalseString;
+            var secureString = new SecureString();
+            Array.ForEach(password.ToCharArray(), item => secureString.AppendChar(item));
+            var credential = new PSCredential(userName, secureString);
+
+            using (PowerShell powerShell = PowerShell.Create())
+            {
+                if (Environment.OSVersion.ToString().Contains("Windows"))
+                {
+                    var psCommand = powerShell.AddCommand("Set-ExecutionPolicy");
+                    psCommand.AddParameter("ExecutionPolicy", "Unrestricted");
+                    psCommand.AddParameter("Scope", "Process");
+                    psCommand.AddParameter("Confirm", false);
+                    psCommand.AddParameter("Force");
+                    var psResult = await powerShell.InvokeAsync();
+                  
+                }
+
+                var path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, @"api\PnP.PowerShell\1.10.0\PnP.PowerShell.psd1");
+                powerShell.Commands.Clear();
+                var psCommand1 = powerShell.AddCommand("Import-Module");
+                psCommand1.AddParameter("Name", path);
+                psCommand1.AddParameter("Force");
+                var psResult1 = await powerShell.InvokeAsync();
+              
+
+                powerShell.Commands.Clear();
+                var psCommand2 = powerShell.AddCommand("Connect-PnPOnline");
+
+
+                psCommand2.AddParameter("Url", message.ParentWebUrl);
+                psCommand2.AddParameter("Credential", credential);
+                var psResult2 = await powerShell.InvokeAsync();
+                psCommand2.Commands.Clear();
+
+                var client = new HttpClient();
+                var scriptFile = client.GetStringAsync(message.ScriptLocation).GetAwaiter().GetResult();
+
+                var script = @$"
+$listTitle = '{message.ListTitle}'
+$requestId = '{message.RequestId}'
+$parentWeb = '{message.ParentWebUrl}'
+" + scriptFile;
+                powerShell.AddScript(script);
+                var psResult4 = await powerShell.InvokeAsync();
+            }
+            //}
         }
 
-        [HttpGet("One", Name = "One")]
-        public String One()
-        {
-            return "1";
-        }
 
-        [HttpGet("Two", Name = "Two")]
-        public String Two()
-        {
-            return "2";
-        }
-
-        [HttpGet("Three", Name = "Three")]
-        public String Three()
-        {
-            return "3";
-        }
-
-   
-
-        [HttpGet("TestGetAdd", Name = "TestGetAdd")]
-        public int TestGetAdd(int a, int b)
-        {
-            return a + b;
-        }
-        [HttpPost("TestPostAdd", Name = "TestPostAdd")]
-        public int TestPostAdd(PostBody body)
-        {
-            return body.a + body.b;
-        }
     }
 
-    public class PostBody
+    public class AzureFunctionJobMessage
     {
-        public int a { set; get; }
-        public int b { set; get; }
+        /// <summary>
+        /// Current dynamic request id
+        /// </summary>
+        public String RequestId { get; set; }
+
+        /// <summary>
+        /// the script location on storage
+        /// </summary>
+        public String ScriptLocation { get; set; }
+        public String ScriptFileName { get; set; }
+
+        /// <summary>
+        /// trace id of the activity
+        /// </summary>
+        public String TraceId { set; get; }
+
+        public String ListTitle { set; get; }
+
+        public String ParentWebUrl { set; get; }
     }
 
 
