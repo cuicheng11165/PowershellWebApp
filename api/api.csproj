@@ -11,4 +11,787 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="PnP.PowerShell\1.10.0\PnP.PowerShell.psd1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\PnP.PowerShell.dll-Help.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\PnP.PowerShell.Format.ps1xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\PSGetModuleInfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\AngleSharp.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\AngleSharp.Css.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.AspNetCore.Hosting.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.AspNetCore.Http.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.AspNetCore.Http.Extensions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.AspNetCore.Http.Features.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.AspNetCore.StaticFiles.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Bcl.AsyncInterfaces.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Bcl.HashCode.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Data.Edm.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Data.OData.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.Caching.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.Caching.Memory.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.Configuration.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.Configuration.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.Configuration.Binder.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.DependencyInjection.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.FileProviders.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.Hosting.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.Http.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.Logging.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.Logging.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.Logging.Configuration.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.Logging.Console.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.Options.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.Options.ConfigurationExtensions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.Primitives.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Extensions.WebEncoders.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Graph.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Graph.Core.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Identity.Client.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Identity.Client.Extensions.Msal.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.IdentityModel.JsonWebTokens.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.IdentityModel.Logging.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.IdentityModel.Tokens.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Net.Http.Headers.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Office.Client.Policy.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Office.Client.TranslationServices.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Office.SharePoint.Tools.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Online.SharePoint.Client.Tenant.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.ProjectServer.Client.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.SharePoint.Client.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.SharePoint.Client.DocumentManagement.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.SharePoint.Client.Publishing.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.SharePoint.Client.Runtime.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.SharePoint.Client.Search.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.SharePoint.Client.Search.Applications.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.SharePoint.Client.Taxonomy.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.SharePoint.Client.UserProfiles.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.SharePoint.Client.WorkflowServices.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Microsoft.Win32.Primitives.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\netstandard.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\PnP.Core.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\PnP.Core.Admin.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\PnP.Core.Auth.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\PnP.Core.Transformation.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\PnP.Core.Transformation.SharePoint.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\PnP.Framework.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\PnP.PowerShell.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\PnP.PowerShell.pdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\Portable.Xaml.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.AppContext.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Collections.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Collections.Concurrent.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Collections.NonGeneric.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Collections.Specialized.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.ComponentModel.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.ComponentModel.Annotations.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.ComponentModel.EventBasedAsync.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.ComponentModel.Primitives.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.ComponentModel.TypeConverter.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Configuration.ConfigurationManager.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Console.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Data.Common.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Diagnostics.Contracts.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Diagnostics.Debug.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Diagnostics.FileVersionInfo.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Diagnostics.Process.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Diagnostics.StackTrace.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Diagnostics.TextWriterTraceListener.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Diagnostics.Tools.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Diagnostics.TraceSource.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Diagnostics.Tracing.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Drawing.Primitives.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Dynamic.Runtime.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Globalization.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Globalization.Calendars.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Globalization.Extensions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.IdentityModel.Tokens.Jwt.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.IO.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.IO.Compression.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.IO.Compression.ZipFile.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.IO.FileSystem.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.IO.FileSystem.DriveInfo.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.IO.FileSystem.Primitives.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.IO.FileSystem.Watcher.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.IO.IsolatedStorage.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.IO.MemoryMappedFiles.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.IO.Packaging.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.IO.Pipes.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.IO.UnmanagedMemoryStream.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Linq.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Linq.Expressions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Linq.Parallel.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Linq.Queryable.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Management.Automation.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Memory.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Net.Http.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Net.NameResolution.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Net.NetworkInformation.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Net.Ping.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Net.Primitives.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Net.Requests.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Net.Security.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Net.Sockets.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Net.WebHeaderCollection.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Net.WebSockets.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Net.WebSockets.Client.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.ObjectModel.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Reflection.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Reflection.Extensions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Reflection.Primitives.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Resources.Reader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Resources.ResourceManager.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Resources.Writer.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Runtime.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Runtime.CompilerServices.VisualC.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Runtime.Extensions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Runtime.Handles.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Runtime.InteropServices.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Runtime.InteropServices.RuntimeInformation.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Runtime.Loader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Runtime.Numerics.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Runtime.Serialization.Formatters.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Runtime.Serialization.Json.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Runtime.Serialization.Primitives.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Runtime.Serialization.Xml.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Security.AccessControl.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Security.Claims.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Security.Cryptography.Algorithms.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Security.Cryptography.Csp.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Security.Cryptography.Encoding.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Security.Cryptography.OpenSsl.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Security.Cryptography.Primitives.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Security.Cryptography.ProtectedData.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Security.Cryptography.X509Certificates.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Security.Permissions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Security.Principal.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Security.Principal.Windows.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Security.SecureString.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Spatial.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Text.Encoding.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Text.Encoding.CodePages.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Text.Encoding.Extensions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Text.Encodings.Web.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Text.Json.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Text.RegularExpressions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Threading.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Threading.Overlapped.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Threading.Tasks.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Threading.Tasks.Extensions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Threading.Tasks.Parallel.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Threading.Thread.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Threading.ThreadPool.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Threading.Timer.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.ValueTuple.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Xml.ReaderWriter.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Xml.XDocument.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Xml.XmlDocument.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Xml.XmlSerializer.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Xml.XPath.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\System.Xml.XPath.XDocument.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\TextCopy.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Framework\TimeZoneConverter.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\AngleSharp.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\AngleSharp.Css.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.AspNetCore.Hosting.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.AspNetCore.Http.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.AspNetCore.Http.Extensions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.AspNetCore.Http.Features.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.AspNetCore.StaticFiles.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Bcl.AsyncInterfaces.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Bcl.HashCode.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Data.Edm.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Data.OData.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.Caching.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.Caching.Memory.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.Configuration.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.Configuration.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.Configuration.Binder.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.DependencyInjection.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.FileProviders.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.Hosting.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.Http.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.Logging.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.Logging.Abstractions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.Logging.Configuration.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.Logging.Console.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.Options.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.Options.ConfigurationExtensions.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.Primitives.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Extensions.WebEncoders.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Graph.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Graph.Core.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Identity.Client.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Identity.Client.Extensions.Msal.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.IdentityModel.JsonWebTokens.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.IdentityModel.Logging.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.IdentityModel.Tokens.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Net.Http.Headers.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Office.Client.Policy.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Office.Client.TranslationServices.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Office.SharePoint.Tools.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.Online.SharePoint.Client.Tenant.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.ProjectServer.Client.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.SharePoint.Client.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.SharePoint.Client.DocumentManagement.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.SharePoint.Client.Publishing.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.SharePoint.Client.Runtime.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.SharePoint.Client.Search.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.SharePoint.Client.Search.Applications.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.SharePoint.Client.Taxonomy.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.SharePoint.Client.UserProfiles.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Microsoft.SharePoint.Client.WorkflowServices.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\PnP.Core.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\PnP.Core.Admin.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\PnP.Core.Auth.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\PnP.Core.Transformation.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\PnP.Core.Transformation.SharePoint.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\PnP.Framework.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\PnP.PowerShell.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\PnP.PowerShell.pdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\Portable.Xaml.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\System.IdentityModel.Tokens.Jwt.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\System.Management.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\System.Management.Automation.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\System.Spatial.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\System.Text.Encoding.CodePages.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\System.Text.Encodings.Web.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\System.Text.Json.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\TextCopy.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Core\TimeZoneConverter.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Common\Microsoft.ApplicationInsights.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Common\PnP.PowerShell.ALC.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Common\PnP.PowerShell.ALC.pdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Common\System.Buffers.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Common\System.Diagnostics.DiagnosticSource.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Common\System.Memory.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Common\System.Numerics.Vectors.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PnP.PowerShell\1.10.0\Common\System.Runtime.CompilerServices.Unsafe.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
