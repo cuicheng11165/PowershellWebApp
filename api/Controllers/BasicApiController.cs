@@ -14,7 +14,7 @@ namespace api.Controllers
     public class RunPsController : ControllerBase
     {
         [HttpPost("execut", Name = "TrueString")]
-        public ActionResult Execute(AzureFunctionJobMessage message)
+        public String Execute(AzureFunctionJobMessage message)
         {
             var sb = new StringBuilder();
             try
@@ -38,8 +38,9 @@ namespace api.Controllers
             catch (Exception ex)
             {
                 sb.AppendLine($"Exception {ex.ToString()}");
+                return sb.ToString();
             }
-            return BadRequest(sb.ToString());
+            return "sucessful";
 
         }
 
