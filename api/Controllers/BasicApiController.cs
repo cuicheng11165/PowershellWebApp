@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Management.Automation;
 using System.Security;
+using Microsoft.WindowsAzure.Storage.Auth;
+using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace api.Controllers
 {
@@ -11,9 +13,28 @@ namespace api.Controllers
         [HttpPost("execut", Name = "TrueString")]
         public ActionResult Execute(AzureFunctionJobMessage message)
         {
-            var username = this.HttpContext.Request.Headers["username"];
-            var password = this.HttpContext.Request.Headers["password"];
-            RunPnpPowershell(username, password, message).GetAwaiter().GetResult();
+            try
+            {
+                System.Diagnostics.Trace.TraceInformation($"RequestId:{message.RequestId}");
+                System.Diagnostics.Trace.TraceInformation($"ScriptFileName:{message.ScriptFileName}");
+                System.Diagnostics.Trace.TraceInformation($"ScriptLocation:{message.ScriptLocation}");
+                System.Diagnostics.Trace.TraceInformation($"ListTitle:{message.ListTitle}");
+                System.Diagnostics.Trace.TraceInformation($"ParentWebUrl:{message.ParentWebUrl}");
+                System.Diagnostics.Trace.TraceInformation($"TraceId:{message.TraceId}");
+
+                var username = this.HttpContext.Request.Headers["username"];
+                var password = this.HttpContext.Request.Headers["password"];
+
+                System.Diagnostics.Trace.TraceInformation($"username:{username}");
+                System.Diagnostics.Trace.TraceInformation($"password:{password}");
+
+                RunPnpPowershell(username, password, message).GetAwaiter().GetResult();
+                System.Diagnostics.Trace.TraceInformation($"Finish");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.TraceInformation($"Exception {ex.ToString()}");
+            }
             return this.Ok();
         }
 
@@ -34,7 +55,7 @@ namespace api.Controllers
                     psCommand.AddParameter("Confirm", false);
                     psCommand.AddParameter("Force");
                     var psResult = await powerShell.InvokeAsync();
-                  
+
                 }
 
                 var path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, @"PnP.PowerShell\1.10.0\PnP.PowerShell.psd1");
@@ -43,7 +64,7 @@ namespace api.Controllers
                 psCommand1.AddParameter("Name", path);
                 psCommand1.AddParameter("Force");
                 var psResult1 = await powerShell.InvokeAsync();
-              
+
 
                 powerShell.Commands.Clear();
                 var psCommand2 = powerShell.AddCommand("Connect-PnPOnline");
@@ -55,7 +76,8 @@ namespace api.Controllers
                 psCommand2.Commands.Clear();
 
                 var client = new HttpClient();
-                var scriptFile = client.GetStringAsync(message.ScriptLocation).GetAwaiter().GetResult();
+                // var scriptFile = client.GetStringAsync(message.ScriptLocation).GetAwaiter().GetResult();
+                var scriptFile = Download(message.ScriptLocation);
 
                 var script = @$"
 $listTitle = '{message.ListTitle}'
@@ -66,6 +88,14 @@ $parentWeb = '{message.ParentWebUrl}'
                 var psResult4 = await powerShell.InvokeAsync();
             }
             //}
+        }
+
+        private void DownloadBlobFromSasUrl() { }
+        private static string Download(String sasUrl)
+        {
+            StorageCredentials storageCredentials = new StorageCredentials(sasUrl);//without "?"
+            CloudBlockBlob sourceBlockBlob = new CloudBlockBlob(new Uri("https://gatrunksapublic.blob.core.windows.net/simmontest/librarytemplates/import/addFileToNewLibrary.ps1"), storageCredentials);
+            return sourceBlockBlob.DownloadTextAsync().GetAwaiter().GetResult();
         }
 
 
