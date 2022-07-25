@@ -1,4 +1,10 @@
+using Microsoft.Extensions.Logging.AzureAppServices;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.Configure<AzureBlobLoggerOptions>(options =>
+{
+    options.BlobName = "log.txt";
+});
 
 // Add services to the container.
 

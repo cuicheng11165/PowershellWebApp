@@ -7,12 +7,14 @@ using System.Text;
 
 namespace api.Controllers
 {
+
+
     [ApiController]
     [Route("runps")]
     public class RunPsController : ControllerBase
     {
         [HttpPost("execut", Name = "TrueString")]
-        public String Execute(AzureFunctionJobMessage message)
+        public ActionResult Execute(AzureFunctionJobMessage message)
         {
             var sb = new StringBuilder();
             try
@@ -37,7 +39,8 @@ namespace api.Controllers
             {
                 sb.AppendLine($"Exception {ex.ToString()}");
             }
-            return sb.ToString();
+            return BadRequest(sb.ToString());
+
         }
 
 
