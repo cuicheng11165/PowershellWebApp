@@ -76,8 +76,8 @@ namespace api.Controllers
                 psCommand2.Commands.Clear();
 
                 var client = new HttpClient();
-                // var scriptFile = client.GetStringAsync(message.ScriptLocation).GetAwaiter().GetResult();
-                var scriptFile = Download(message.ScriptLocation);
+                var scriptFile = client.GetStringAsync(message.ScriptLocation).GetAwaiter().GetResult();
+              
 
                 var script = @$"
 $listTitle = '{message.ListTitle}'
@@ -89,14 +89,7 @@ $parentWeb = '{message.ParentWebUrl}'
             }
             //}
         }
-
-        private void DownloadBlobFromSasUrl() { }
-        private static string Download(String sasUrl)
-        {
-            StorageCredentials storageCredentials = new StorageCredentials(sasUrl);//without "?"
-            CloudBlockBlob sourceBlockBlob = new CloudBlockBlob(new Uri("https://gatrunksapublic.blob.core.windows.net/simmontest/librarytemplates/import/addFileToNewLibrary.ps1"), storageCredentials);
-            return sourceBlockBlob.DownloadTextAsync().GetAwaiter().GetResult();
-        }
+      
 
 
     }
