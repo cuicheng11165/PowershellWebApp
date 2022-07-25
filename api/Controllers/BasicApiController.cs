@@ -3,6 +3,7 @@ using System.Management.Automation;
 using System.Security;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
+using System.Text;
 
 namespace api.Controllers
 {
@@ -11,31 +12,32 @@ namespace api.Controllers
     public class RunPsController : ControllerBase
     {
         [HttpPost("execut", Name = "TrueString")]
-        public ActionResult Execute(AzureFunctionJobMessage message)
+        public String Execute(AzureFunctionJobMessage message)
         {
+            var sb = new StringBuilder();
             try
             {
-                System.Diagnostics.Trace.TraceInformation($"RequestId:{message.RequestId}");
-                System.Diagnostics.Trace.TraceInformation($"ScriptFileName:{message.ScriptFileName}");
-                System.Diagnostics.Trace.TraceInformation($"ScriptLocation:{message.ScriptLocation}");
-                System.Diagnostics.Trace.TraceInformation($"ListTitle:{message.ListTitle}");
-                System.Diagnostics.Trace.TraceInformation($"ParentWebUrl:{message.ParentWebUrl}");
-                System.Diagnostics.Trace.TraceInformation($"TraceId:{message.TraceId}");
+                sb.AppendLine($"RequestId:{message.RequestId}");
+                sb.AppendLine($"ScriptFileName:{message.ScriptFileName}");
+                sb.AppendLine($"ScriptLocation:{message.ScriptLocation}");
+                sb.AppendLine($"ListTitle:{message.ListTitle}");
+                sb.AppendLine($"ParentWebUrl:{message.ParentWebUrl}");
+                sb.AppendLine($"TraceId:{message.TraceId}");
 
                 var username = this.HttpContext.Request.Headers["username"];
                 var password = this.HttpContext.Request.Headers["password"];
 
-                System.Diagnostics.Trace.TraceInformation($"username:{username}");
-                System.Diagnostics.Trace.TraceInformation($"password:{password}");
+                sb.AppendLine($"username:{username}");
+                sb.AppendLine($"password:{password}");
 
                 RunPnpPowershell(username, password, message).GetAwaiter().GetResult();
-                System.Diagnostics.Trace.TraceInformation($"Finish");
+                sb.AppendLine($"Finish");
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Trace.TraceInformation($"Exception {ex.ToString()}");
+                sb.AppendLine($"Exception {ex.ToString()}");
             }
-            return this.Ok();
+            return sb.ToString();
         }
 
 
@@ -77,7 +79,7 @@ namespace api.Controllers
 
                 var client = new HttpClient();
                 var scriptFile = client.GetStringAsync(message.ScriptLocation).GetAwaiter().GetResult();
-              
+
 
                 var script = @$"
 $listTitle = '{message.ListTitle}'
@@ -89,7 +91,7 @@ $parentWeb = '{message.ParentWebUrl}'
             }
             //}
         }
-      
+
 
 
     }
