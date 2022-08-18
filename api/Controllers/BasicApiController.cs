@@ -4,6 +4,8 @@ using System.Security;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System.Text;
+using Microsoft.SharePoint.Client;
+
 
 namespace api.Controllers
 {
@@ -13,7 +15,7 @@ namespace api.Controllers
     [Route("runps")]
     public class RunPsController : ControllerBase
     {
-        [HttpPost("execut", Name = "TrueString")]
+        [HttpPost("execut", Name = "execut")]
         public String Execute(AzureFunctionJobMessage message)
         {
             var sb = new StringBuilder();
@@ -33,6 +35,48 @@ namespace api.Controllers
                 sb.AppendLine($"password:{password}");
 
                 RunPnpPowershell(username, password, message).GetAwaiter().GetResult();
+                sb.AppendLine($"Finish");
+            }
+            catch (Exception ex)
+            {
+                sb.AppendLine($"Exception {ex.ToString()}");
+                return sb.ToString();
+            }
+            return "sucessful";
+
+        }
+
+        [HttpPost("gcchexecute", Name = "gcchexecute")]
+        public String GccHighExecute(AzureFunctionJobMessage message)
+        {
+            var sb = new StringBuilder();
+            try
+            {
+                sb.AppendLine($"RequestId:{message.RequestId}");
+                sb.AppendLine($"ScriptFileName:{message.ScriptFileName}");
+                sb.AppendLine($"ScriptLocation:{message.ScriptLocation}");
+                sb.AppendLine($"ListTitle:{message.ListTitle}");
+                sb.AppendLine($"ParentWebUrl:{message.ParentWebUrl}");
+                sb.AppendLine($"TraceId:{message.TraceId}");
+
+                var username = this.HttpContext.Request.Headers["username"];
+                var password = this.HttpContext.Request.Headers["password"];
+
+                sb.AppendLine($"username:{username}");
+                sb.AppendLine($"password:{password}");
+
+                var context = new ClientContext("https://m365x14268897.sharepoint.com/sites/scBasic01");
+                context.Credentials = new SharePointOnlineCredentials("admin's@M365x14268897.onmicrosoft.com", "GaBigQa!@");
+                var list = context.Web.Lists.GetByTitle("Library01");
+
+                list.RootFolder.Files.Add(new FileCreationInformation
+                {
+                    Content = Encoding.UTF8.GetBytes(sb.ToString()),
+                    Overwrite = true,
+                    Url = $"{message.RequestId}.txt"
+                });
+                context.ExecuteQueryAsync().Wait();
+                
                 sb.AppendLine($"Finish");
             }
             catch (Exception ex)
