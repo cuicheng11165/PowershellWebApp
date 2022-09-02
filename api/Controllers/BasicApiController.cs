@@ -111,8 +111,9 @@ namespace api.Controllers
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"call ESDCDemo faield with exception:{ex}");
                 sb.AppendLine($"Exception {ex.ToString()}");
-                return sb.ToString();
+                throw new Exception(sb.ToString(), ex);
             }
             return "sucessful";
         }
