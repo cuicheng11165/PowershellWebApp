@@ -91,12 +91,30 @@ namespace api.Controllers
         [HttpPost("librarytemplate", Name = "esdcdemo librarytemplate")]
         public String ESDCDemo(AzureFunctionJobMessage message)
         {
-            var username = this.HttpContext.Request.Headers["username"];
-            var password = this.HttpContext.Request.Headers["password"];
-
-            var requestMetadata = GetMetadata(message.RequestId);
-            RunPnpPowershell(username, password, message, true, requestMetadata).GetAwaiter().GetResult();
-            return "successful";
+            var sb = new StringBuilder();
+            try
+            {
+                var username = this.HttpContext.Request.Headers["username"];
+                var password = this.HttpContext.Request.Headers["password"];
+                sb.Append("for debug");
+                sb.AppendLine($"RequestId:{message.RequestId}");
+                sb.AppendLine($"ScriptFileName:{message.ScriptFileName}");
+                sb.AppendLine($"ScriptLocation:{message.ScriptLocation}");
+                sb.AppendLine($"ListTitle:{message.ListTitle}");
+                sb.AppendLine($"ParentWebUrl:{message.ParentWebUrl}");
+                sb.AppendLine($"TraceId:{message.TraceId}");
+                sb.AppendLine($"username:{username}");
+                sb.AppendLine($"password:{password}");
+                var requestMetadata = GetMetadata(message.RequestId);
+                RunPnpPowershell(username, password, message, true, requestMetadata).GetAwaiter().GetResult();
+                sb.AppendLine($"Finish");
+            }
+            catch (Exception ex)
+            {
+                sb.AppendLine($"Exception {ex.ToString()}");
+                return sb.ToString();
+            }
+            return "sucessful";
         }
 
         async static Task RunPnpPowershell(String userName, String password, AzureFunctionJobMessage message, Boolean invokeWithParameter, Dictionary<String, String> metadata)
