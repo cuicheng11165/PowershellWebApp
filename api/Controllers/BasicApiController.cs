@@ -5,12 +5,12 @@ using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System.Text;
 using Microsoft.SharePoint.Client;
-
+using Cloud.Governance.Client.Api;
+using Cloud.Governance.Client.Client;
+using Cloud.Governance.Client.Model;
 
 namespace api.Controllers
 {
-
-
     [ApiController]
     [Route("runps")]
     public class RunPsController : ControllerBase
@@ -34,7 +34,7 @@ namespace api.Controllers
                 sb.AppendLine($"username:{username}");
                 sb.AppendLine($"password:{password}");
 
-                RunPnpPowershell(username, password, message).GetAwaiter().GetResult();
+                RunPnpPowershell(username, password, message, false, null).GetAwaiter().GetResult();
                 sb.AppendLine($"Finish");
             }
             catch (Exception ex)
@@ -76,7 +76,7 @@ namespace api.Controllers
                     Url = $"{message.RequestId}.txt"
                 });
                 context.ExecuteQueryAsync().Wait();
-                
+
                 sb.AppendLine($"Finish");
             }
             catch (Exception ex)
@@ -88,8 +88,18 @@ namespace api.Controllers
 
         }
 
+        [HttpPost("librarytemplate", Name = "esdcdemo librarytemplate")]
+        public String ESDCDemo(AzureFunctionJobMessage message)
+        {
+            var username = this.HttpContext.Request.Headers["username"];
+            var password = this.HttpContext.Request.Headers["password"];
 
-        async static Task RunPnpPowershell(String userName, String password, AzureFunctionJobMessage message)
+            var requestMetadata = GetMetadata(message.RequestId);
+            RunPnpPowershell(username, password, message, true, requestMetadata).GetAwaiter().GetResult();
+            return "successful";
+        }
+
+        async static Task RunPnpPowershell(String userName, String password, AzureFunctionJobMessage message, Boolean invokeWithParameter, Dictionary<String, String> metadata)
         {
             var secureString = new SecureString();
             Array.ForEach(password.ToCharArray(), item => secureString.AppendChar(item));
@@ -125,23 +135,66 @@ namespace api.Controllers
                 var psResult2 = await powerShell.InvokeAsync();
                 psCommand2.Commands.Clear();
 
-                var client = new HttpClient();
-                var scriptFile = client.GetStringAsync(message.ScriptLocation).GetAwaiter().GetResult();
-
-
-                var script = @$"
-$listTitle = '{message.ListTitle}'
-$requestId = '{message.RequestId}'
-$parentWeb = '{message.ParentWebUrl}'
-" + scriptFile;
-                powerShell.AddScript(script);
+                InitPowerShellSciprt(powerShell, message, invokeWithParameter, metadata);
                 var psResult4 = await powerShell.InvokeAsync();
             }
             //}
         }
 
+        private static void InitPowerShellSciprt(PowerShell powerShell, AzureFunctionJobMessage message, Boolean byParameter, Dictionary<String, String> metadata)
+        {
+            var client = new HttpClient();
+            var scriptFile = client.GetStringAsync(message.ScriptLocation).GetAwaiter().GetResult();
+            if (byParameter)
+            {
+                powerShell.AddScript(scriptFile);
+                powerShell.AddParameter("libraryName", message.ListTitle);
+                if (metadata != null)
+                {
+                    powerShell.AddParameter("metadata", metadata);
+                }
+            }
+            else
+            {
+                var script = @$"
+                    $listTitle = '{message.ListTitle}'
+                    $requestId = '{message.RequestId}'
+                    $parentWeb = '{message.ParentWebUrl}'
+                    " + scriptFile;
+                powerShell.AddScript(script);
+            }
+        }
+        private Dictionary<String, String> GetMetadata(String requestId)
+        {
+            var metadata = new Dictionary<String, String>();
+            //You can find the Modern API Endpoint in Cloud Governance admin user guide for your environment.
+            Configuration.Default.BasePath = "https://graph.sharepointguild.com/governance";
+            // Configure API key authorization: ClientSecret
+            Configuration.Default.AddApiKey("clientSecret", "oQOkPR5VdlS3Vv2c6UynWkMOajcJmlbi6aS9Q4jOgNptzLdCeVsXd2BgNuajCSc/yPkmNYfgUHf9XMm4+aT9CuPzwfU36TnogphknFenNLc9KAwqn5qnfFQ84gEXVdf86iRasnUV150zimwt5idYqIqjHmoucooSGoaSQz6M9/KG+b35naK1S2eeI/BN9yGectCPitVO+DwcCfEsJ4tINheG7U6oXeiq1t1M5WAAypYqqKSvDz+f+gPtQ+mUPo3DpjaUcTVnNdbAKoUxJgzUXZ1PlpgB71vY++hah+frDcbI+ZWufcRzMnrKtbtTLjZvIHI5YVKrRcFO21hws/A/rA==");
 
+            // Configure API key authorization: UserPrincipalName
+            Configuration.Default.AddApiKey("userPrincipalName", "simmon@baron.space");
 
+            //default is 
+            var requestsApi = new RequestsApi(Configuration.Default);
+            var request = requestsApi.GetDynamicRequest(new Guid(requestId));
+
+            if (request.Metadatas != null)
+            {
+                request.Metadatas.ForEach(m =>
+                {
+                    metadata[m.Name] = m.ValueString;
+                });
+            }
+            request.ActivityGalleries.ForEach(x =>
+            {
+                if (x.GalleryMetadata != null)
+                {
+                    x.GalleryMetadata.ForEach(m => metadata[m.Name] = m.ValueString);
+                }
+            });
+            return metadata;
+        }
     }
 
     public class AzureFunctionJobMessage
@@ -152,9 +205,13 @@ $parentWeb = '{message.ParentWebUrl}'
         public String RequestId { get; set; }
 
         /// <summary>
-        /// the script location on storage
+        /// the library template script location on storage
         /// </summary>
         public String ScriptLocation { get; set; }
+
+        /// <summary>
+        /// the library template script name
+        /// </summary>
         public String ScriptFileName { get; set; }
 
         /// <summary>
