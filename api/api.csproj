@@ -7,13 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JsonSubTypes" Version="1.7.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="6.0.7" />
     <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.2.5" />
-    <PackageReference Include="Polly" Version="7.2.0" />
-    <PackageReference Include="RestSharp" Version="106.12.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
   </ItemGroup>
 
@@ -801,9 +797,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Cloud.Governance.Client">
-      <HintPath>CloudGovernanceClientSdk\Cloud.Governance.Client.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Office.Client.Policy.Portable">
       <HintPath>netstandard2.0\Microsoft.Office.Client.Policy.Portable.dll</HintPath>
     </Reference>
