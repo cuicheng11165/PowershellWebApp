@@ -65,8 +65,8 @@ namespace api.Controllers
                 sb.AppendLine($"username:{username}");
                 sb.AppendLine($"password:{password}");
 
-                var context = new ClientContext("https://m365x14268897.sharepoint.com/sites/scBasic01");
-                context.Credentials = new SharePointOnlineCredentials("admin's@M365x14268897.onmicrosoft.com", "GaBigQa!@");
+                var context = new ClientContext("https://m365x92321900.sharepoint.com/sites/miaSite");
+                context.Credentials = new SharePointOnlineCredentials("admin's@M365x92321900.onmicrosoft.com", "GaBigQa!@");
                 var list = context.Web.Lists.GetByTitle("Library01");
 
                 list.RootFolder.Files.Add(new FileCreationInformation
